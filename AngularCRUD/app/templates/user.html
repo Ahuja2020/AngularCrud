@@ -1,0 +1,36 @@
+﻿<h2> User</h2>
+<a href="#/adduser" class="btn btn-primary">Create New</a>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        List User
+    </div>
+    <div class="panel-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Title </th>
+                    <th>SubTitle</th>
+                    <th>Tags</th>
+                    <th>Des</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="i in users">
+                    <td>{{i.ArticleTitle}}</td>
+                    <td>{{i.ArticleSubtitle}}</td>
+                    <td>{{i.ArticleTags}}</td>
+                    <td>{{i.ArticleDes}}</td>
+                    <td><a href="#/edituser/{{i.id}}">Edit</a> |
+                         <a href="" ng-click="deleteUser(i.id)">Delete</a></td>
+                </tr>
+                <tr ng-if="!users || users.length == 0">
+                    <td colspan="4" style="text-align:center">
+                        No user data to display
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
